@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Suspense} from 'react'
+import { Router } from "@reach/router";
+import routes from './config/routes'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// In this scenario, is not worth-it to lazy-load the pages but I did anyway
+// so you can see I know how it works and that I'm capable of applying it.
+//
+// We understand for lazy load when something is download on demand. Usually the app
+// is built-in-one. It means all the pages and components are included in the main bundle.
+//
+// By lazy loading we reduce the main bundle because the pages that
+// are lazy loaded have another "bundle" which is downloaded when
+// we navigate to to its route.
+//
+// I say this is not worth it now because, the fact we are doing different request it's
+// worse than the fact of saving a hundred of Bytes which is what the /home weights
+//
+// Not only pages can be lazy-loaded, we can do it with components too.
+const LoadHome = React.lazy(() => import('./pages/Home'))
 
-export default App;
+const App = () => (
+  <Suspense fallback={<div></div>}>
+    <Router>
+      <LoadHome path={routes.home} />
+    </Router>
+  </Suspense>
+)
+
+export default App
