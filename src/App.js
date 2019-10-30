@@ -1,6 +1,7 @@
 import React, {Suspense} from 'react'
 import { Router } from "@reach/router";
 import routes from './config/routes'
+import Web3Provider from './components/Web3Provider'
 
 // In this scenario, is not worth-it to lazy-load the pages but I did anyway
 // so you can see I know how it works and that I'm capable of applying it.
@@ -19,11 +20,13 @@ import routes from './config/routes'
 const LoadHome = React.lazy(() => import('./pages/Home'))
 
 const App = () => (
-  <Suspense fallback={<div></div>}>
-    <Router>
-      <LoadHome path={routes.home} />
-    </Router>
-  </Suspense>
+  <Web3Provider>
+    <Suspense fallback={<div></div>}>
+      <Router>
+        <LoadHome path={routes.home} />
+      </Router>
+    </Suspense>
+  </Web3Provider>
 )
 
 export default App
