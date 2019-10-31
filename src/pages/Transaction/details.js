@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useWeb3Context } from 'web3-react'
 import styled from 'styled-components'
 import {getBlockUrl} from '../../config/routes'
+import Preview from './preview'
 import LinkReset from '../../components/LinkReset'
 import PageTitle from '../../components/PageTitle'
 import { AddressField } from '@aragon/ui'
@@ -29,6 +30,7 @@ const TransactionDetails = ({blockHash, hash}) => {
           Go back
       </GoBack>
       <PageTitle>{pageTitle}</PageTitle>
+      {!transaction && <Box><Preview/></Box>}
       {transaction && (
         <Box>
           <Details title='Reference'>{transaction.hash}</Details>
