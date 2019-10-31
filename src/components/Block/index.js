@@ -23,7 +23,7 @@ const generateHumanDateFormat = timestamp => {
 
 const Block = ({
   block: {
-    hash,
+    hash: blockHash,
     number,
     gasUsed,
     gasLimit,
@@ -52,7 +52,7 @@ const Block = ({
   return (
     <Card
       title={`Block #${number}`}
-      url={getBlockUrl({hash})}
+      url={getBlockUrl({blockHash})}
       tags={blockTags}/>
   )
 }
