@@ -2,6 +2,7 @@ import React from 'react'
 import Page from '../../components/Page'
 import Loading from '../../components/Loading'
 import Error from '../../components/Error'
+import PageTitle from '../../components/PageTitle'
 
 const HomePage = () => (
   <Page
@@ -9,7 +10,7 @@ const HomePage = () => (
     error={<Error/>}
     render={(
       <>
-        <div>home still working</div>
+        <PageTitle>Last Ethereum blocks</PageTitle>
       </>
     )}
   />
