@@ -5,11 +5,11 @@
 
 _I researched a little bit and found that is a bit tricky to check the state of the account because we have the ask for it constantly_
 
-##  Author
+##  About the author
 
-Victor Ribero Guasch
+My name is Victor Ribero Guasch. I'm a frontend developer based in Barcelona.
 
-## Where you can find me
+To know more about me or my activity you can find me on:
 - [Github](https://github.com/tureey)
 - [Linkedin](https://www.linkedin.com/in/victorribero)
 - [Twitter](https://twitter.com/devictoribero)
