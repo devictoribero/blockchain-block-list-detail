@@ -11,6 +11,7 @@ import Main from '../Main'
 import Footer from '../Footer'
 import {MAIN_NAV_CONFIG} from '../../config/main-navigation'
 import {links} from '../../config/footer'
+import Title from './title'
 
 const Page = ({loading, error, render}) => {
   const {isLoading, hasError} = useConnectWeb3()
@@ -40,6 +41,7 @@ Page.propTypes = {
 }
 
 export default Page
+export {Title}
 
 const Wrapper = styled.div`
   min-height: 100vh;

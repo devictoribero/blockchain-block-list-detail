@@ -5,7 +5,7 @@ import Page from '../../components/Page'
 import Loading from '../../components/Loading'
 import Error from '../../components/Error'
 import LinkReset from '../../components/LinkReset'
-import PageTitle from '../../components/PageTitle'
+import {Title} from '../../components/Page'
 import Grid from '../../components/Grid'
 import Emoji from '../../components/Emoji'
 import Transaction from '../../components/Transaction'
@@ -22,7 +22,7 @@ const BlockPage = ({hash}) => (
             <Emoji size='medium' icon='👈' label='finger pointing left'/>
             Go back
         </GoBack>
-        <PageTitle>Block transactions</PageTitle>
+        <Title>Block transactions</Title>
         <Transactions blockHash={hash}/>
       </>
     )}/>

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {getBlockUrl} from '../../config/routes'
 import Preview from './preview'
 import LinkReset from '../../components/LinkReset'
-import PageTitle from '../../components/PageTitle'
+import {Title} from '../../components/Page'
 import { AddressField } from '@aragon/ui'
 import Emoji from '../../components/Emoji'
 import Box from '../../components/Box'
@@ -19,7 +19,7 @@ const TransactionDetails = ({blockHash, hash}) => {
     library.getTransaction(hash).then(setTransaction)
   }, [blockHash, hash, library])
 
-  const pageTitle = transaction 
+  const title = transaction 
     ? `${COMMON_TITLE} #${transaction.transactionIndex}`
     : COMMON_TITLE
 
@@ -29,7 +29,7 @@ const TransactionDetails = ({blockHash, hash}) => {
           <Emoji size='medium' icon='👈' label='finger pointing left'/>
           Go back
       </GoBack>
-      <PageTitle>{pageTitle}</PageTitle>
+      <Title>{title}</Title>
       {!transaction && <Box><Preview/></Box>}
       {transaction && (
         <Box>

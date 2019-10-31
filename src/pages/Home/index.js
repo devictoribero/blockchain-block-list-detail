@@ -3,7 +3,7 @@ import { useWeb3Context } from 'web3-react'
 import Page from '../../components/Page'
 import Loading from '../../components/Loading'
 import Error from '../../components/Error'
-import PageTitle from '../../components/PageTitle'
+import {Title} from '../../components/Page'
 import Grid from '../../components/Grid'
 import Box from '../../components/Box'
 import {Preview} from '../../components/Card'
@@ -15,7 +15,7 @@ const HomePage = () => (
     error={<Error/>}
     render={(
       <>
-        <PageTitle>Last Ethereum blocks</PageTitle>
+        <Title>Last Ethereum blocks</Title>
         <BlocksList/>
       </>
     )}

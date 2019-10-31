@@ -2,15 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const PageTitle = ({children}) => <Title>{children}</Title>
+const Title = ({children}) => <Wrapper>{children}</Wrapper>
 
-PageTitle.propTypes = {
+Title.propTypes = {
   children: PropTypes.node.isRequired
 }
 
-export default PageTitle
+export default Title
 
-const Title = styled.h2`
+const Wrapper = styled.h2`
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 0.2px;
