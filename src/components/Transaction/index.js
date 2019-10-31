@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {getBlockTransactionUrl} from '../../config/routes'
+import routes from '../../config/routes'
 import Emoji from '../Emoji'
 import Card from '../Card'
 
@@ -8,10 +8,13 @@ const EMOJI_TEXT_CAUTION = 'A triangle with an exclamation mark inside'
 const EMOJI_TEXT_PAGE_WITH_CURL = 'A white piece of paper, curled up at the bottom to the left or right'
 const ICON_SIZE = 'small'
 
+const getTransactionUrl = ({blockHash, hash}) =>
+  routes.transaction.replace(':blockHash', blockHash).replace(':hash', hash)
+
 const Transaction = ({
   transaction: {
     blockHash,
-    hash: transactionHash,
+    hash,
     transactionIndex,
     confirmations,
     nonce,
@@ -32,7 +35,7 @@ const Transaction = ({
   return (
     <Card
       title={`Transaction #${transactionIndex}`}
-      url={getBlockTransactionUrl({blockHash, transactionHash})}
+      url={getTransactionUrl({blockHash, hash})}
       tags={tags}/>
   )
 }

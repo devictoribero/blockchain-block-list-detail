@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // Since I don't know if metaMask supports SSR (I don't think so),
-// I thought about using a preview so the uses feels a better experience
+// I thought about using a preview so the UX increases
 const Preview = () => (
   <Wrapper>
     <Number/>

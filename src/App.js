@@ -19,8 +19,7 @@ import Web3Provider from './components/Web3Provider'
 // Not only pages can be lazy-loaded, we can do it with components too.
 const LoadHome = React.lazy(() => import('./pages/Home'))
 const LoadBlockTransactions = React.lazy(() => import('./pages/Block'))
-// In the future
-//const LoadTransaction = React.lazy(() => import('./pages/Transaction'))
+const LoadTransaction = React.lazy(() => import('./pages/Transaction'))
 
 const App = () => (
   <Web3Provider>
@@ -28,7 +27,7 @@ const App = () => (
       <Router>
         <LoadHome path={routes.home} />
         <LoadBlockTransactions exact path={routes.block}/>
-        {/* <LoadTransaction exact path={routes.transaction}/> */}
+        <LoadTransaction exact path={routes.transaction}/>
       </Router>
     </Suspense>
   </Web3Provider>

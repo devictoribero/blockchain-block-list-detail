@@ -13,7 +13,7 @@ const ICON_SIZE = 'small'
 const fixDecimals = number => number.toFixed(2)
 const calculateMillions = number => number / Math.pow(10, 6)
 const generateHumanDateFormat = timestamp => {
-  const date = new Date(timestamp * MAGIC_NUMBER) // got this from internet 😂
+  const date = new Date(timestamp * MAGIC_NUMBER)
   const hours = date.getHours()
   const minutes = date.getMinutes()
   const seconds = date.getSeconds()
@@ -23,7 +23,7 @@ const generateHumanDateFormat = timestamp => {
 
 const Block = ({
   block: {
-    hash: blockHash,
+    hash,
     number,
     gasUsed,
     gasLimit,
@@ -52,7 +52,7 @@ const Block = ({
   return (
     <Card
       title={`Block #${number}`}
-      url={getBlockUrl({blockHash})}
+      url={getBlockUrl({hash})}
       tags={blockTags}/>
   )
 }
