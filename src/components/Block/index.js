@@ -52,7 +52,7 @@ const Block = ({
   return (
     <Card
       title={`Block #${number}`}
-      url={getBlockUrl({hash})}
+      url={getBlockUrl({blockHash: hash})}
       tags={blockTags}/>
   )
 }
